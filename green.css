@@ -1,0 +1,23 @@
+input[type=checkbox] {
+	visibility:hidden;
+}
+.led{
+	display:inline-block;
+	width:15px;
+	height:15px;
+	padding:0px;
+	margin:0px;
+}
+
+.led label{
+	display:inline-block;
+	background-color:black;
+	cursor: pointer;
+	width:15px;
+	height:15px;
+}
+
+.led input[type=checkbox]:checked + label{
+	background-color:green;
+}
+

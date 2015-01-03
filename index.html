@@ -1,0 +1,26 @@
+<html ng-app="LoLShieldCalc">
+<head>
+  <meta charset="utf8" />
+  <title>AngularJS Tutorial</title>
+  <link rel="stylesheet" href="green.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> 
+</head>
+<body>
+  <div class="container" ng-controller="LoLCtrl">
+  
+	<div ng-repeat="row in cells track by $index" ng-init="$row = $index">		
+		<div class="led" ng-repeat="col in cells[$index] track by $index" ng-init="$col = $index" >			
+			<input type="checkbox" ng-model="cells[$row][$col]" ng-change="change()" id="{{'box_' + $row+ '_' +$col}}"/>
+			<label for="{{'box_' + $row+ '_' +$col}}"></label>
+		</div>
+		<br />
+	</div>
+  
+	
+	<p><pre ng-show="ledString">{{ledString}}</pre></p>
+    
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
