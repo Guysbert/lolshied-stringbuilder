@@ -1,25 +1,37 @@
 <html ng-app="LoLShieldCalc">
 <head>
   <meta charset="utf8" />
-  <title>AngularJS Tutorial</title>
+  <title>Lots of Lights string calculator</title>
   <link rel="stylesheet" href="green.css">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> 
 </head>
 <body>
-  <div class="container" ng-controller="LoLCtrl">
-  
-	<div ng-repeat="row in cells track by $index" ng-init="$row = $index">		
-		<div class="led" ng-repeat="col in cells[$index] track by $index" ng-init="$col = $index" >			
-			<input type="checkbox" ng-model="cells[$row][$col]" ng-change="change()" id="{{'box_' + $row+ '_' +$col}}"/>
-			<label for="{{'box_' + $row+ '_' +$col}}"></label>
-		</div>
-		<br />
-	</div>
-  
-	
-	<p><pre ng-show="ledString">{{ledString}}</pre></p>
-    
+  <a href="https://github.com/Guysbert/lolshied-stringbuilder"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+	<div class="container" ng-controller="LoLCtrl">
+    <div class="selector">
+  		<div class="row" ng-repeat="row in cells track by $index" ng-init="$row = $index">
+  			<div class="led" ng-repeat="col in cells[$index] track by $index" ng-init="$col = $index" >
+  				<input type="checkbox" ng-model="cells[$row][$col]" ng-change="change()" id="{{'box_' + $row+ '_' +$col}}"/>
+  				<label for="{{'box_' + $row+ '_' +$col}}"></label>
+  			</div>
+  		</div>
+    </div>
+      <br />
+    <p><pre ng-show="ledString">{{ledString}}</pre></p>
+    <p>This is my first angularJS project. I bought a <a href="http://jimmieprodgers.com/kits/lolshield/">
+      Lots Of Lights-Shield</a> at <a href="https://events.ccc.de/congress/2014/wiki/Main_Page">31c3</a>.
+      I wanted to extend the Fonts.cpp with missing characters. <br />
+      To do that, you have to declare a string that defines which LEDs have to glow to display a certain character.
+      Building that string and trying it on the arduino seemed a little bit tedious to me.
+      To be honest I would've been long done now ;) But instead I created an angularJS script
+      that does all the tedious work for me.<br />
+      I guess I'll use this as an AngularJS Playground for some time.<br />
+      If you'd lik to improve the webapp, you can fork the code on 
+      <a href="https://github.com/Guysbert/lolshied-stringbuilder">github</a>.</b>
+      I'd love to see some improvement on the CSS.
+    </p>
   </div>
+
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
   <script src="app.js"></script>
 </body>

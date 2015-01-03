@@ -30,7 +30,8 @@ angular.module('LoLShieldCalc', [])
 					}
 			}	
 			if ($scope.ledString.length > 0){
-				$scope.ledString += "END";
+
+				$scope.ledString = "{ " + $scope.ledString +  "END };";
 			}
 		};
 	});

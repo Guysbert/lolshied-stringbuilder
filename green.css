@@ -1,23 +1,32 @@
 input[type=checkbox] {
 	visibility:hidden;
 }
+
+
+.container{
+	background-color: darkgrey;
+}
+
+
 .led{
-	display:inline-block;
-	width:15px;
-	height:15px;
-	padding:0px;
-	margin:0px;
+	display: inline-block;
+	height: 15px;	
+	width: 15px;
+	
+
 }
 
 .led label{
-	display:inline-block;
 	background-color:black;
 	cursor: pointer;
-	width:15px;
-	height:15px;
+	border: none;
+	width: 15px;
+	height: 15px;
+	position: relative;
+	border-radius: 10px;
 }
 
 .led input[type=checkbox]:checked + label{
-	background-color:green;
+	background-color:#00FF22;
 }
 
